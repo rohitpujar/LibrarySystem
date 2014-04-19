@@ -11,14 +11,61 @@
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Book ID" />
-			<h:inputText id="bookIdInput" value="#{checkIn.bookId}"/>
+			<h:inputText id="bookIdInput" value="#{checkIn.bookId}" />
 			<h:outputLabel value="Card No" />
-			<h:inputText id="cardNoInput" value="#{checkIn.cardNo}"/>
+			<h:inputText id="cardNoInput" value="#{checkIn.cardNo}" />
+			<h:outputLabel value="Branch ID" />
+			<h:inputText id="branchIdInput" value="#{checkIn.branchId}" />
+			<h:outputText  value="Loan ID"/>
+			<h:inputText id="loanIdInput" value="#{checkIn.loanId}"/>
 			<h:outputLabel value="First Name" />
-			<h:inputText id="fnameInput" value="#{checkIn.firstName}"/>
+			<h:inputText id="fnameInput" value="#{checkIn.firstName}" />
 			<h:outputLabel value="Last Name" />
-			<h:inputText id="lnameInput" value="#{checkIn.lastName}"/>
-			<h:commandButton action="#{checkIn.checkIn}" value="Submit" />
+			<h:inputText id="lnameInput" value="#{checkIn.lastName}" />
+			<h:commandButton action="#{checkIn.locateBooks}" value="Locate Books" />
+			<h:commandButton action="#{checkIn.checkIn}" value="Check In" />
+			<br />
+			<br />
+
+			<h:dataTable border="1" value="#{checkIn.data}" var="o"
+				styleClass="order-table" headerClass="order-table-header"
+				rowClasses="order-table-odd-row,order-table-even-row">
+
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">LoanId</f:facet>
+					<!-- row record -->
+    				#{o.loanId}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">BookId</f:facet>
+    				#{o.bookId}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Branch Id</f:facet>
+    				#{o.branchId}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Card No</f:facet>
+    				#{o.cardNo}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">First Name</f:facet>
+    				#{o.fname}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Last Name</f:facet>
+    				#{o.lname}
+    			</h:column>
+
+
+			</h:dataTable>
+
 		</h:panelGrid>
 	</h:form>
 </h:body>
