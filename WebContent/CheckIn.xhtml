@@ -4,22 +4,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:u="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:u="http://java.sun.com/jsf/facelets">
 
 <h:body>
 	<h1>Check In</h1>
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Book ID" />
-			<h:inputText id="bookIdInput" />
+			<h:inputText id="bookIdInput" value="#{checkIn.bookId}"/>
 			<h:outputLabel value="Card No" />
-			<h:inputText id="cardNoInput" />
+			<h:inputText id="cardNoInput" value="#{checkIn.cardNo}"/>
 			<h:outputLabel value="First Name" />
-			<h:inputText id="fnameInput" />
+			<h:inputText id="fnameInput" value="#{checkIn.firstName}"/>
 			<h:outputLabel value="Last Name" />
-			<h:inputText id="lnameInput" />
-			<h:button value="Submit" />
+			<h:inputText id="lnameInput" value="#{checkIn.lastName}"/>
+			<h:commandButton action="#{checkIn.checkIn}" value="Submit" />
 		</h:panelGrid>
 	</h:form>
 </h:body>
