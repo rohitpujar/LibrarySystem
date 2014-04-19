@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:u="http://java.sun.com/jsf/facelets">
+
+<h:body>
+	<f:view>
+		<h1>Search Books</h1>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Book Id" />
+				<h:inputText id="bookIdInput" value="#{searchBook.bookId}" />
+				<h:outputLabel id="titleOutputId" value="Title" />
+				<h:inputText id="titleInput" value="#{searchBook.title}" />
+				<h:outputLabel value=" Author Name" />
+				<h:inputText id="authorInput" value="#{searchBook.authorName}" />
+				<br />
+				<h:commandButton action="#{searchBook.searchBooks}" value="Search" />
+				<br />
+
+				<h:dataTable border="1" value="#{searchBook.data}" var="o"
+					styleClass="order-table" headerClass="order-table-header"
+					rowClasses="order-table-odd-row,order-table-even-row">
+
+					<h:column>
+						<!-- column header -->
+						<f:facet name="header">BookId</f:facet>
+						<!-- row record -->
+    				#{o.bookId}
+    			</h:column>
+
+					<h:column>
+						<f:facet name="header">Title</f:facet>
+    				#{o.title}
+    			</h:column>
+
+					<h:column>
+						<f:facet name="header">Author Name</f:facet>
+    				#{o.authorName}
+    			</h:column>
+
+					<h:column>
+						<f:facet name="header">BranchId</f:facet>
+    				#{o.branchId}
+    			</h:column>
+
+					<h:column>
+						<f:facet name="header">Total Copies</f:facet>
+    				#{o.noOfCopies}
+    			</h:column>
+
+				</h:dataTable>
+
+
+			</h:panelGrid>
+		</h:form>
+	</f:view>
+</h:body>
+
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:u="http://java.sun.com/jsf/facelets">
+
+<h:form>
+	<h1>Create New User for Library</h1>
+	<h:messages style="color:red" />
+	<h:panelGrid columns="2">
+		<h:outputLabel id="firstNameOutputId" value="First Name" />
+		<h:inputText id="fnameInputId" value="#{newUser.fname}"
+			required="true" label="First Name" />
+		<h:outputLabel id="lastNameOutputId" value="Last Name" />
+		<h:inputText id="lnameInputId" value="#{newUser.lname}"
+			required="true" label="Last Name" />
+		<h:outputLabel id="addressOutputId" value=" Address" />
+		<h:inputText id="addressInputId" value="#{newUser.address}"
+			required="true" label="Address" />
+		<h:outputLabel id="cityOutputId" value=" City" />
+		<h:inputText id="cityInputId" value="#{newUser.city}" />
+		<h:outputLabel id="stateOutputId" value=" State" />
+		<h:inputText id="StateInputId" value="#{newUser.state}" />
+		<h:outputLabel id="phoneOutputId" value="Phone" />
+		<h:inputText id="phoneInputId" value="#{newUser.phone}"
+			required="true" label="Phone" />
+		<h:commandButton action="#{newUser.newUserRegistration}"
+			value="New User" />
+	</h:panelGrid>
+</h:form>
+
+</html>
