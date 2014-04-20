@@ -85,7 +85,7 @@ public class SearchBooks {
 		data = new ArrayList<SearchResults>();
 		FacesContext context = FacesContext.getCurrentInstance();
 		Connection con = getConnection();
-		String searchQuery = "select  out1.book_id,   out1.title,   out1.author_name,   bc.branch_id,   bc.no_of_copies from    (select    b.book_id, b.title, ba.author_name   from   book as b, book_authors as ba   where       ba.book_id = b.book_Id   and b.book_Id like '%"
+		String searchQuery = "select  out1.book_id,   out1.title,   out1.author_name,   bc.branch_id,   bc.no_of_copies,bc.No_of_available_copies from    (select    b.book_id, b.title, ba.author_name   from   book as b, book_authors as ba   where       ba.book_id = b.book_Id   and b.book_Id like '%"
 				+ getBookId()
 				+ "%'    and b.title like '%"
 				+ getTitle()
@@ -107,6 +107,7 @@ public class SearchBooks {
 				sr.authorName = res.getString("author_name");
 				sr.branchId = res.getString("branch_id");
 				sr.noOfCopies = res.getString("no_of_copies");
+				sr.availableCopies = res.getString("no_of_available_copies");
 				data.add(sr);
 			}
 			System.out.println("ArrayList Data size is : " + data.size());
