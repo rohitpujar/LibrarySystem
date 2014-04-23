@@ -8,6 +8,7 @@
 
 <h:body>
 	<h1>Check In</h1>
+	<h:messages style="color:red" />
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Book ID" />
@@ -16,8 +17,8 @@
 			<h:inputText id="cardNoInput" value="#{checkIn.cardNo}" />
 			<h:outputLabel value="Branch ID" />
 			<h:inputText id="branchIdInput" value="#{checkIn.branchId}" />
-			<h:outputText  value="Loan ID"/>
-			<h:inputText id="loanIdInput" value="#{checkIn.loanId}"/>
+			<h:outputText value="Loan ID" />
+			<h:inputText id="loanIdInput" value="#{checkIn.loanId}" />
 			<h:outputLabel value="First Name" />
 			<h:inputText id="fnameInput" value="#{checkIn.firstName}" />
 			<h:outputLabel value="Last Name" />
@@ -26,7 +27,11 @@
 			<h:commandButton action="#{checkIn.checkIn}" value="Check In" />
 			<br />
 			<br />
-
+			<h:outputLink value="Welcome.xhtml">
+				<h:outputText value="Main Page" />
+			</h:outputLink>
+			<br />
+			<br />
 			<h:dataTable border="1" value="#{checkIn.data}" var="o"
 				styleClass="order-table" headerClass="order-table-header"
 				rowClasses="order-table-odd-row,order-table-even-row">

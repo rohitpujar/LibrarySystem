@@ -20,40 +20,44 @@
 				<br />
 				<h:commandButton action="#{searchBook.searchBooks}" value="Search" />
 				<br />
+				<h:outputLink value="Welcome.xhtml">
+					<h:outputText value="Main Page" />
+				</h:outputLink>
+				<br />
 
 				<h:dataTable border="1" value="#{searchBook.data}" var="o"
 					styleClass="order-table" headerClass="order-table-header"
 					rowClasses="order-table-odd-row,order-table-even-row">
 					<!-- <h:panelGrid columns="2"> -->
-						<h:column>
-							<!-- column header -->
-							<f:facet name="header">BookId</f:facet>
-							<!-- row record -->
+					<h:column>
+						<!-- column header -->
+						<f:facet name="header">BookId</f:facet>
+						<!-- row record -->
     				#{o.bookId}
     			</h:column>
 
-						<h:column>
-							<f:facet name="header">Title</f:facet>
+					<h:column>
+						<f:facet name="header">Title</f:facet>
     				#{o.title}
     			</h:column>
 
-						<h:column>
-							<f:facet name="header">Author Name</f:facet>
+					<h:column>
+						<f:facet name="header">Author Name</f:facet>
     				#{o.authorName}
     			</h:column>
 
-						<h:column>
-							<f:facet name="header">BranchId</f:facet>
+					<h:column>
+						<f:facet name="header">BranchId</f:facet>
     				#{o.branchId}
     			</h:column>
 
-						<h:column>
-							<f:facet name="header">Total Copies</f:facet>
+					<h:column>
+						<f:facet name="header">Total Copies</f:facet>
     				#{o.noOfCopies}
     			</h:column>
 
-						<h:column>
-							<f:facet name="header"> Available Copies</f:facet>
+					<h:column>
+						<f:facet name="header"> Available Copies</f:facet>
     				#{o.availableCopies}
     			</h:column>
 					<!-- </h:panelGrid> -->

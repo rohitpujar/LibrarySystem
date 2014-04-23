@@ -113,7 +113,8 @@ public class CheckIn {
 	}
 
 	public String checkIn() {
-
+		int validate = validate();
+		if(validate == 1){
 		FacesContext context = FacesContext.getCurrentInstance();
 		Connection con = getConnection();
 		String checkInQuery = "update book_loans set Date_in=now() where Book_id='" + getBookId() + "' and Branch_id=" + getBranchId()
@@ -141,9 +142,22 @@ public class CheckIn {
 			e.printStackTrace();
 		}
 		return "CheckIn";
-
+		}else{
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage("Please enter Book ID, Card no, Branch ID, Loan ID"));
+			return null;
+		}
 	}
 
+	private int validate(){
+		FacesContext context = FacesContext.getCurrentInstance();
+		if(getBookId().isEmpty() || getCardNo().isEmpty() || getBranchId().isEmpty() || getLoanId().isEmpty()){
+//			context.addMessage(null, new FacesMessage("Please enter Book ID, Card no, Branch ID, Loan ID"));
+			return 0;
+		} else{
+			return 1;
+		}
+	}
 	private Connection getConnection() {
 		Connection con = null;
 		try {

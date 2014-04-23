@@ -6,11 +6,15 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:u="http://java.sun.com/jsf/facelets">
 
+<head></head>
 <h:body>
+	<h:outputStylesheet library="css" name="style.css" />
 	<h:form>
-
 		<h1>Welcome to Library Management System</h1>
+		<div style="width: 570px; border-bottom: 5px solid black;"></div>
 		<h:panelGrid>
+			<br />
+			<br />
 			<h:outputLink value="LibraryPage.xhtml">
 				<h:outputText value="Library" />
 			</h:outputLink>
@@ -26,6 +30,7 @@
 			<h:outputLink value="CheckOut.xhtml">
 				<h:outputText value="Check Out" />
 			</h:outputLink>
+			
 		</h:panelGrid>
 	</h:form>
 </h:body>
