@@ -12,12 +12,14 @@
 	<h:form>
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Card number" />
-			<h:inputText id="cardNoInputId" required="true"
-				value="#{checkOut.cardNo}" />
+			<h:inputText id="cardNoInputId" value="#{checkOut.cardNo}"
+				required="true" label="Card Number" />
 			<h:outputLabel value="Book ID" />
-			<h:inputText id="bookIdInputId" value="#{checkOut.bookId}" />
+			<h:inputText id="bookIdInputId" value="#{checkOut.bookId}"
+				required="true" label="Book ID" />
 			<h:outputLabel value="Branch ID" />
-			<h:inputText id="branchIdInputId" value="#{checkOut.branchId}" />
+			<h:inputText id="branchIdInputId" value="#{checkOut.branchId}"
+				required="true" label="Branch ID" />
 			<h:commandButton action="#{checkOut.checkOut}" value="Submit" />
 			<br />
 			<br />

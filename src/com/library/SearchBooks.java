@@ -91,7 +91,7 @@ public class SearchBooks {
 				+ getTitle()
 				+ "%'     and ba.author_name like '%"
 				+ getAuthorName()
-				+ "%') as out1,   book_copies as bc where   out1.book_id = bc.book_id;";
+				+ "%' group by b.book_id) as out1,   book_copies as bc where   out1.book_id = bc.book_id;";
 		try {
 			System.out.println("Executing search Query : " + searchQuery);
 			PreparedStatement ps = con.prepareStatement(searchQuery);
